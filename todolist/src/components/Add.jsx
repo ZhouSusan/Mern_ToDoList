@@ -55,13 +55,7 @@ const Add = (props) => {
                 {
                     list.map((task, i) => {
                         return (
-                            <Task isComplete={task.isComplete} name={task.name} toggleComplete={() => toggleComplete(i)} deleteTask={() => deleteTask(i)}/>
-                            // <div key = {i} style={{textDecoration: task.isComplete ? "line-through": "initial"}}>{task.name}
-                            // <label>
-                            //     <input type="checkbox" onClick={() => toggleComplete(i)}/>
-                            // </label>
-                            // <button onClick={() => deleteTask(i)} type="submit">Delete</button>
-                            // </div>
+                            <Task task={task} toggleComplete={() => toggleComplete(i)} deleteTask={() => deleteTask(i)}/>
                         )
                     })
                 }
