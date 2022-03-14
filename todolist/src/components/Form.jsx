@@ -3,7 +3,7 @@ import Task from './Task';
 
 const Form = (props) => {
 
-    const [list, setList] = useState([]);
+    const {list, setList} = props;
     const [task, setTask] = useState({
         name: "",
         isComplete : false
@@ -20,13 +20,12 @@ const Form = (props) => {
     const createTask = (event) => {
         event.preventDefault();
         setList([...list, task]);
-        console.log(list);
+
         setTask({name: "",
         isComplete : false})
     }
 
     const toggleComplete = (selectedIdx) => {
-        //We make a copy of the list by making a copy of the array and the mutating the state
         const copyList = [...list];
         const selectedItem = copyList[selectedIdx];
         selectedItem.isComplete === true ? selectedItem.isComplete = false : selectedItem.isComplete = true;
@@ -34,11 +33,9 @@ const Form = (props) => {
     }
 
     const deleteTask = (selectedIndex) => {
-        //we filter through the array of taks, to only return the ones who index number doesn't match the index(i) 
         let revisedList = list.filter((task, i) => {
             return i !== selectedIndex;
         })
-        //update new list
         setList(revisedList);
     }
 
