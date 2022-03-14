@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Task from './Task';
 
-const Add = (props) => {
+const Form = (props) => {
 
     const [list, setList] = useState([]);
     const [task, setTask] = useState({
@@ -63,4 +63,4 @@ const Add = (props) => {
         </div>
     )
 }
-export default Add;
+export default Form;

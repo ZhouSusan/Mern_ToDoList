@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
 import './App.css';
-import Add from './components/Add';
+import Form from './components/Form';
 
 function App() {
   return (
     <div className="App">
-      <Add/>
+      <Form/>
       </div>
   );
 }
